@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "witcher3-remastered-to-nextgen-save-converter"
+version = "0.1.0"
+description = "Experimental Witcher 3 Remastered 5.0 to Next-Gen 4.04 save conversion toolkit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["lz4>=4.3,<5"]
+
+[project.scripts]
+w3save = "w3save.cli:main"
+
+[project.urls]
+Repository = "https://github.com/cahian/witcher3-remastered-to-nextgen-save-converter"
+Issues = "https://github.com/cahian/witcher3-remastered-to-nextgen-save-converter/issues"
+
+[tool.setuptools.packages.find]
+include = ["w3save*"]
+
+[tool.setuptools.package-data]
+w3save = ["snippets/*.ws"]

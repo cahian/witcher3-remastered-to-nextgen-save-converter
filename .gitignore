@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.DS_Store
+.pytest_cache/
+*.sav
+*.bin
+*.png
+*.jpg
+*.zip
+*.tar.gz
+private/
+artifacts/
+generated/
+generated-mod/
+generated-mods/
+reports/
+scriptslog*.txt
+*.settings
+*.vdf
+
+# Deliberately public generated cover; gameplay images remain ignored.
+!assets/repository-cover.png
