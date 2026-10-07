@@ -86,7 +86,7 @@ def compare_facts(before, after):
 
 def build_parser():
     parser = argparse.ArgumentParser(
-        description='Experimental Witcher 3 Remastered 5.0 → Next-Gen 4.04 save toolkit. '
+        description='Experimental Witcher 3 Remastered 5.0 to Next-Gen 4.04 save toolkit. '
                     'Prepared files require native-game validation; see README for the narrow supported profile.')
     parser.add_argument('--version', action='version', version=__version__)
     commands = parser.add_subparsers(dest='command', required=True)
@@ -193,5 +193,5 @@ def main(argv=None):
     except (ValueError, OSError, UnicodeError, struct.error) as error:
         print(f'Error: {error}', file=sys.stderr)
         return 2
-    print(json.dumps(result, indent=2, ensure_ascii=False))
+    print(json.dumps(result, indent=2, ensure_ascii=True))
     return 0

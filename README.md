@@ -2,6 +2,8 @@
 
 ![The Witcher 3 Save Converter — Remastered 5.0 to Next-Gen 4.04](assets/repository-cover.png)
 
+[![Tests](https://github.com/cahian/witcher3-remastered-to-nextgen-save-converter/actions/workflows/tests.yml/badge.svg)](https://github.com/cahian/witcher3-remastered-to-nextgen-save-converter/actions/workflows/tests.yml)
+
 Convert a **The Witcher 3 Remastered 5.0 save to Steam Next-Gen 4.04**, including a campaign originally started in Remastered. This experimental Python toolkit repairs the supported inventory layout, generates a temporary skill migration mod from your installed game, and checks the resulting save.
 
 **One real checkpoint has been converted and reloaded in unmodified 4.04 on Steam Deck. Support is deliberately narrow.** The current skill profile requires exactly the three purchased skills `sword_s22`, `sword_s23`, and `sword_s24`, each at level 1, with 1 free and 3 spent skill points and no researched mutations. Those purchases become **4 available points** in Next-Gen. Other profiles are refused.

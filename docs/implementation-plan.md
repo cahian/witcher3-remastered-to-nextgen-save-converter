@@ -32,7 +32,7 @@
 - [x] Run CLI commands against the retained private source/reference/native saves and compare with the verified conversion artifacts. Keep outputs outside this repository.
 - [x] Verify README commands from a fresh virtual environment; scan tracked content for personal paths, secrets, saves, images and full game scripts. Only the deliberately public generated cover is included.
 - [x] Review all code and compatibility claims independently; fix concrete findings.
-- [ ] Create the explicitly requested public repository only after the original conversion succeeds. Push reviewed source, documentation and synthetic tests; verify visibility, remote HEAD and CI.
+- [x] Publish the reviewed source, documentation and synthetic tests after the original conversion succeeds; verify public access and remote artifacts. Continuous cross-platform verification is available in [GitHub Actions](https://github.com/cahian/witcher3-remastered-to-nextgen-save-converter/actions/workflows/tests.yml).
 
 ## Review focus
 

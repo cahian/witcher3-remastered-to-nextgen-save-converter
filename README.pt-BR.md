@@ -2,6 +2,8 @@
 
 ![The Witcher 3 Save Converter — Remastered 5.0 para Next-Gen 4.04](assets/repository-cover.png)
 
+[![Testes](https://github.com/cahian/witcher3-remastered-to-nextgen-save-converter/actions/workflows/tests.yml/badge.svg)](https://github.com/cahian/witcher3-remastered-to-nextgen-save-converter/actions/workflows/tests.yml)
+
 Ferramenta experimental para converter um **save do Remastered 5.0 para o Next-Gen 4.04 da Steam**, incluindo campanhas iniciadas no Remastered. Ela adapta o inventário, gera um mod temporário a partir do seu próprio jogo e permite comparar o save resultante. O processamento é local.
 
 **Um checkpoint real foi convertido e carregado novamente no Steam Deck, com o Next-Gen 4.04 sem o mod.** A compatibilidade atual é restrita: exige as três habilidades compradas `sword_s22`, `sword_s23` e `sword_s24`, todas no nível 1, com 1 ponto livre, 3 gastos e nenhuma mutação pesquisada. As compras são desfeitas, deixando **4 pontos disponíveis** para distribuir no Next-Gen. Outros perfis são recusados.

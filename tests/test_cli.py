@@ -1,10 +1,13 @@
 """CLI safety checks using temporary synthetic files only."""
 import os
+import io
+import json
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 
 class CommandLineTests(unittest.TestCase):
@@ -17,6 +20,22 @@ class CommandLineTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         for command in ('inspect', 'prepare', 'make-mod', 'finalize', 'audit'):
             self.assertIn(command, result.stdout)
+
+    def test_help_works_in_windows_legacy_output_encoding(self):
+        env = dict(os.environ, PYTHONIOENCODING='cp1252')
+        result = subprocess.run([sys.executable, '-m', 'w3save', '--help'],
+                                env=env, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr.decode('ascii', errors='replace'))
+
+    def test_json_preserves_unicode_on_legacy_output_stream(self):
+        from w3save.cli import main
+        buffer = io.BytesIO()
+        stream = io.TextIOWrapper(buffer, encoding='cp1252')
+        report = {'name': 'synthetic_\u4e16\u754c'}
+        with patch('w3save.cli.execute', return_value=report), patch('sys.stdout', stream):
+            self.assertEqual(main(['inspect', 'synthetic.sav']), 0)
+        stream.flush()
+        self.assertEqual(json.loads(buffer.getvalue()), report)
 
     def test_invalid_input_fails_cleanly_without_creating_candidate(self):
         with tempfile.TemporaryDirectory() as directory:
